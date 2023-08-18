@@ -1,0 +1,24 @@
+
+<h1>Chat</h1>
+<div>
+  <div id="messages"></div>
+  <input
+    class="input  is-medium"
+    type="text"
+    id="username"
+    style="margin-top: 15px"
+    placeholder="Nombre"
+  />
+  <input
+    class="input  is-medium"
+    type="text"
+    id="message"
+    style="margin-top: 15px"
+    placeholder="Mensaje"
+  />
+  <button id="send" class="btn btn-info" style="margin-top: 15px">
+    Send
+  </button>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

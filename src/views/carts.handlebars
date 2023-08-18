@@ -1,0 +1,33 @@
+<h1 class="title__cartpage">CHECKOUT</h1>
+{{#if cart.length}}
+  <table class="table__cart">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cart}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.quantity}}</td>
+          <td><button onclick="removeProductFromCart('{{../cart._id}}', '{{this.product._id}}')" class="btn btn-info">Eliminar</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button class="btn btn-info" onclick="clearCart()">Vaciar carrito</button>
+<a href="http://localhost:8080/carts/{{userCartId}}/purchase" class="btn btn-info">Finalizar compra</a>
+<a href="http://localhost:8080/products"><button class="btn btn-info">Continuar comprando</button></a>
+
+{{else}}
+  <p>No products in the cart</p>
+  <a href="http://localhost:8080/products"><button class="btn btn-info">Continuar comprando</button></a>
+{{/if}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/profile.js"></script>
