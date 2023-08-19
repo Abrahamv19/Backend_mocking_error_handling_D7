@@ -28,6 +28,7 @@ class ServiceProducts {
             const product = await productsDAO.getProductById( { _id: id } );
             return product;
         } catch (err) {
+            // throw new CustomError(`No se encontró producto de id ${id}.`, 'ProductNotFoundError');
             throw (`No se encontró producto de id ${id}.`);
         }
     };
