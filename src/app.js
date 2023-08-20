@@ -1,6 +1,7 @@
 /* -------------IMPORTS-------------*/
 import MongoStore from 'connect-mongo';
-import express from 'express'
+import express from 'express';
+import 'express-async-errors';
 import exphbs from "express-handlebars";
 import session from 'express-session';
 import morgan from "morgan";
